@@ -1,0 +1,1208 @@
+[
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "errno",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "errno",
+        "description": "errno",
+        "detail": "errno",
+        "documentation": {}
+    },
+    {
+        "label": "lzma",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "lzma",
+        "description": "lzma",
+        "detail": "lzma",
+        "documentation": {}
+    },
+    {
+        "label": "multiprocessing",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "stat",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "stat",
+        "description": "stat",
+        "detail": "stat",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "textwrap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "textwrap",
+        "description": "textwrap",
+        "detail": "textwrap",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "tarfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tarfile",
+        "description": "tarfile",
+        "detail": "tarfile",
+        "documentation": {}
+    },
+    {
+        "label": "JType",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class JType:\n    def __init__(self, cpp, jni):\n        self.cpp = cpp\n        self.jni = jni\nclass JArray(JType):\n    def __init__(self, type):\n        if type.cpp in primitives:\n            name = type.cpp + 'Array'\n        else:\n            name = 'jobjectArray'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "JArray",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class JArray(JType):\n    def __init__(self, type):\n        if type.cpp in primitives:\n            name = type.cpp + 'Array'\n        else:\n            name = 'jobjectArray'\n        super().__init__(name, '[' + type.jni)\nclass Argument:\n    def __init__(self, name, type, set_arg = False):\n        self.name = name",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "Argument",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class Argument:\n    def __init__(self, name, type, set_arg = False):\n        self.name = name\n        self.type = type\n        self.set_arg = set_arg\n    def cpp(self):\n        return f'{self.type.cpp} {self.name}'\n# Args we don't care, give it an auto generated name\nclass Anon(Argument):\n    cnt = 0",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "Anon",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class Anon(Argument):\n    cnt = 0\n    def __init__(self, type):\n        super().__init__(f'_{Anon.cnt}', type)\n        Anon.cnt += 1\nclass Return:\n    def __init__(self, value, type):\n        self.value = value\n        self.type = type\nclass Method:",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "Return",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class Return:\n    def __init__(self, value, type):\n        self.value = value\n        self.type = type\nclass Method:\n    def __init__(self, name, ret, args):\n        self.name = name\n        self.ret = ret\n        self.args = args\n    def cpp(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "Method",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class Method:\n    def __init__(self, name, ret, args):\n        self.name = name\n        self.ret = ret\n        self.args = args\n    def cpp(self):\n        return ', '.join(map(lambda x: x.cpp(), self.args))\n    def name_list(self):\n        return ', '.join(map(lambda x: x.name, self.args))\n    def jni(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "JNIHook",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class JNIHook(Method):\n    def __init__(self, ver, ret, args):\n        name = f'{self.base_name()}_{ver}'\n        super().__init__(name, ret, args)\n    def base_name(self):\n        return ''\n    def orig_method(self):\n        return f'reinterpret_cast<decltype(&{self.name})>({self.base_name()}_orig)'\ndef ind(i):\n    return '\\n' + '    ' * i",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "ForkAndSpec",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'\n    def init_args(self):\n        return 'AppSpecializeArgs_v3 args(uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name, instruction_set, app_data_dir);'\n    def body(self):\n        decl = ''\n        decl += ind(1) + self.init_args()",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "SpecApp",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class SpecApp(ForkAndSpec):\n    def __init__(self, ver, args):\n        super().__init__(ver, args)\n        self.ret = Return('', void)\n    def base_name(self):\n        return 'nativeSpecializeAppProcess'\nclass ForkServer(ForkAndSpec):\n    def base_name(self):\n        return 'nativeForkSystemServer'\n    def init_args(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "ForkServer",
+        "kind": 6,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "class ForkServer(ForkAndSpec):\n    def base_name(self):\n        return 'nativeForkSystemServer'\n    def init_args(self):\n        return 'ServerSpecializeArgs_v1 args(uid, gid, gids, runtime_flags, permitted_capabilities, effective_capabilities);'\n# Common args\nuid = Argument('uid', jint)\ngid = Argument('gid', jint)\ngids = Argument('gids', jintArray)\nruntime_flags = Argument('runtime_flags', jint)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "ind",
+        "kind": 2,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "def ind(i):\n    return '\\n' + '    ' * i\n# Common types\njint = JType('jint', 'I')\njintArray = JArray(jint)\njstring = JType('jstring', 'Ljava/lang/String;')\njboolean = JType('jboolean', 'Z')\njlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "gen_jni_def",
+        "kind": 2,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "def gen_jni_def(clz, methods):\n    if clz not in hook_map:\n        hook_map[clz] = []\n    decl = ''\n    for m in methods:\n        decl += ind(0) + f'[[clang::no_stack_protector]] {m.ret.type.cpp} {m.name}(JNIEnv *env, jclass clazz, {m.cpp()}) {{'\n        decl += m.body()\n        if m.ret.value:\n            decl += ind(1) + f'return {m.ret.value};'\n        decl += ind(0) + '}'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "gen_jni_hook",
+        "kind": 2,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "def gen_jni_hook():\n    decl = ''\n    decl += ind(0) + 'static JNINativeMethod *hookAndSaveJNIMethods(const char *className, const JNINativeMethod *methods, int numMethods) {'\n    decl += ind(1) + 'JNINativeMethod *newMethods = nullptr;'\n    decl += ind(1) + 'int clz_id = -1;'\n    decl += ind(1) + 'int hook_cnt = 0;'\n    decl += ind(1) + 'do {'\n    for index, (clz, methods) in enumerate(hook_map.items()):\n        decl += ind(2) + f'if (className == \"{clz}\"sv) {{'\n        decl += ind(3) + f'clz_id = {index};'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "primitives",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "primitives = ['jint', 'jboolean', 'jlong']\nclass JType:\n    def __init__(self, cpp, jni):\n        self.cpp = cpp\n        self.jni = jni\nclass JArray(JType):\n    def __init__(self, type):\n        if type.cpp in primitives:\n            name = type.cpp + 'Array'\n        else:",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "jint",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "jint = JType('jint', 'I')\njintArray = JArray(jint)\njstring = JType('jstring', 'Ljava/lang/String;')\njboolean = JType('jboolean', 'Z')\njlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "jintArray",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "jintArray = JArray(jint)\njstring = JType('jstring', 'Ljava/lang/String;')\njboolean = JType('jboolean', 'Z')\njlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "jstring",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "jstring = JType('jstring', 'Ljava/lang/String;')\njboolean = JType('jboolean', 'Z')\njlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'\n    def init_args(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "jboolean",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "jboolean = JType('jboolean', 'Z')\njlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'\n    def init_args(self):\n        return 'AppSpecializeArgs_v3 args(uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name, instruction_set, app_data_dir);'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "jlong",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "jlong = JType('jlong', 'J')\nvoid = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'\n    def init_args(self):\n        return 'AppSpecializeArgs_v3 args(uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name, instruction_set, app_data_dir);'\n    def body(self):",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "void",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "void = JType('void', 'V')\nclass ForkAndSpec(JNIHook):\n    def __init__(self, ver, args):\n        super().__init__(ver, Return('ctx.pid', jint), args)\n    def base_name(self):\n        return 'nativeForkAndSpecialize'\n    def init_args(self):\n        return 'AppSpecializeArgs_v3 args(uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name, instruction_set, app_data_dir);'\n    def body(self):\n        decl = ''",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "uid",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "uid = Argument('uid', jint)\ngid = Argument('gid', jint)\ngids = Argument('gids', jintArray)\nruntime_flags = Argument('runtime_flags', jint)\nrlimits = Argument('rlimits', JArray(jintArray))\nmount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "gid",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "gid = Argument('gid', jint)\ngids = Argument('gids', jintArray)\nruntime_flags = Argument('runtime_flags', jint)\nrlimits = Argument('rlimits', JArray(jintArray))\nmount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "gids",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "gids = Argument('gids', jintArray)\nruntime_flags = Argument('runtime_flags', jint)\nrlimits = Argument('rlimits', JArray(jintArray))\nmount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "runtime_flags",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "runtime_flags = Argument('runtime_flags', jint)\nrlimits = Argument('rlimits', JArray(jintArray))\nmount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "rlimits",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "rlimits = Argument('rlimits', JArray(jintArray))\nmount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "mount_external",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "mount_external = Argument('mount_external', jint)\nse_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "se_info",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "se_info = Argument('se_info', jstring)\nnice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "nice_name",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "nice_name = Argument('nice_name', jstring)\nfds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fds_to_close",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fds_to_close = Argument('fds_to_close', jintArray)\ninstruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)\n# r",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "instruction_set",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "instruction_set = Argument('instruction_set', jstring)\napp_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)\n# r\npkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "app_data_dir",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "app_data_dir = Argument('app_data_dir', jstring)\n# o\nfds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)\n# r\npkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)\nwhitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fds_to_ignore",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fds_to_ignore = Argument('fds_to_ignore', jintArray, True)\n# p\nis_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)\n# r\npkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)\nwhitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)\nmount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "is_child_zygote",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "is_child_zygote = Argument('is_child_zygote', jboolean, True)\n# q_alt\nis_top_app = Argument('is_top_app', jboolean, True)\n# r\npkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)\nwhitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)\nmount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "is_top_app",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "is_top_app = Argument('is_top_app', jboolean, True)\n# r\npkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)\nwhitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)\nmount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "pkg_data_info_list",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "pkg_data_info_list = Argument('pkg_data_info_list', JArray(jstring), True)\nwhitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)\nmount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "whitelisted_data_info_list",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "whitelisted_data_info_list = Argument('whitelisted_data_info_list', JArray(jstring), True)\nmount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "mount_data_dirs",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "mount_data_dirs = Argument('mount_data_dirs', jboolean, True)\nmount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "mount_storage_dirs",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "mount_storage_dirs = Argument('mount_storage_dirs', jboolean, True)\n# server\npermitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "permitted_capabilities",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "permitted_capabilities = Argument('permitted_capabilities', jlong)\neffective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir])\nfas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "effective_capabilities",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "effective_capabilities = Argument('effective_capabilities', jlong)\n# Method definitions\nfas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir])\nfas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app])",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_l",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_l = ForkAndSpec('l', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir])\nfas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nfas_r = ForkAndSpec('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_o",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_o = ForkAndSpec('o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir])\nfas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nfas_r = ForkAndSpec('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app,\n    pkg_data_info_list, whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nfas_samsung_m = ForkAndSpec('samsung_m', [uid, gid, gids, runtime_flags, rlimits, mount_external,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_p",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_p = ForkAndSpec('p', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir])\nfas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nfas_r = ForkAndSpec('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app,\n    pkg_data_info_list, whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nfas_samsung_m = ForkAndSpec('samsung_m', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_samsung_n = ForkAndSpec('samsung_n', [uid, gid, gids, runtime_flags, rlimits, mount_external,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_q_alt",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_q_alt = ForkAndSpec('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nfas_r = ForkAndSpec('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app,\n    pkg_data_info_list, whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nfas_samsung_m = ForkAndSpec('samsung_m', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_samsung_n = ForkAndSpec('samsung_n', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir, Anon(jint)])\nfas_samsung_o = ForkAndSpec('samsung_o', [uid, gid, gids, runtime_flags, rlimits, mount_external,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_r",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_r = ForkAndSpec('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, fds_to_close, fds_to_ignore, is_child_zygote, instruction_set, app_data_dir, is_top_app,\n    pkg_data_info_list, whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nfas_samsung_m = ForkAndSpec('samsung_m', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_samsung_n = ForkAndSpec('samsung_n', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir, Anon(jint)])\nfas_samsung_o = ForkAndSpec('samsung_o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_samsung_p = ForkAndSpec('samsung_p', [uid, gid, gids, runtime_flags, rlimits, mount_external,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_samsung_m",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_samsung_m = ForkAndSpec('samsung_m', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir])\nfas_samsung_n = ForkAndSpec('samsung_n', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir, Anon(jint)])\nfas_samsung_o = ForkAndSpec('samsung_o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_samsung_p = ForkAndSpec('samsung_p', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, is_child_zygote,\n    instruction_set, app_data_dir])\nspec_q = SpecApp('q', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_samsung_n",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_samsung_n = ForkAndSpec('samsung_n', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, instruction_set, app_data_dir, Anon(jint)])\nfas_samsung_o = ForkAndSpec('samsung_o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_samsung_p = ForkAndSpec('samsung_p', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, is_child_zygote,\n    instruction_set, app_data_dir])\nspec_q = SpecApp('q', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir])\nspec_q_alt = SpecApp('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_samsung_o",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_samsung_o = ForkAndSpec('samsung_o', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, instruction_set, app_data_dir])\nfas_samsung_p = ForkAndSpec('samsung_p', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, is_child_zygote,\n    instruction_set, app_data_dir])\nspec_q = SpecApp('q', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir])\nspec_q_alt = SpecApp('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nspec_r = SpecApp('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "fas_samsung_p",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "fas_samsung_p = ForkAndSpec('samsung_p', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, fds_to_close, fds_to_ignore, is_child_zygote,\n    instruction_set, app_data_dir])\nspec_q = SpecApp('q', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir])\nspec_q_alt = SpecApp('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nspec_r = SpecApp('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name,\n    is_child_zygote, instruction_set, app_data_dir, is_top_app, pkg_data_info_list,\n    whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "spec_q",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "spec_q = SpecApp('q', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir])\nspec_q_alt = SpecApp('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nspec_r = SpecApp('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name,\n    is_child_zygote, instruction_set, app_data_dir, is_top_app, pkg_data_info_list,\n    whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nspec_samsung_q = SpecApp('samsung_q', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, is_child_zygote, instruction_set, app_data_dir])\nserver_l = ForkServer('l', [uid, gid, gids, runtime_flags, rlimits,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "spec_q_alt",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "spec_q_alt = SpecApp('q_alt', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info,\n    nice_name, is_child_zygote, instruction_set, app_data_dir, is_top_app])\nspec_r = SpecApp('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name,\n    is_child_zygote, instruction_set, app_data_dir, is_top_app, pkg_data_info_list,\n    whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nspec_samsung_q = SpecApp('samsung_q', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, is_child_zygote, instruction_set, app_data_dir])\nserver_l = ForkServer('l', [uid, gid, gids, runtime_flags, rlimits,\n    permitted_capabilities, effective_capabilities])\nserver_samsung_q = ForkServer('samsung_q', [uid, gid, gids, runtime_flags, Anon(jint), Anon(jint), rlimits,",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "spec_r",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "spec_r = SpecApp('r', [uid, gid, gids, runtime_flags, rlimits, mount_external, se_info, nice_name,\n    is_child_zygote, instruction_set, app_data_dir, is_top_app, pkg_data_info_list,\n    whitelisted_data_info_list, mount_data_dirs, mount_storage_dirs])\nspec_samsung_q = SpecApp('samsung_q', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, is_child_zygote, instruction_set, app_data_dir])\nserver_l = ForkServer('l', [uid, gid, gids, runtime_flags, rlimits,\n    permitted_capabilities, effective_capabilities])\nserver_samsung_q = ForkServer('samsung_q', [uid, gid, gids, runtime_flags, Anon(jint), Anon(jint), rlimits,\n    permitted_capabilities, effective_capabilities])\nhook_map = {}",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "spec_samsung_q",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "spec_samsung_q = SpecApp('samsung_q', [uid, gid, gids, runtime_flags, rlimits, mount_external,\n    se_info, Anon(jint), Anon(jint), nice_name, is_child_zygote, instruction_set, app_data_dir])\nserver_l = ForkServer('l', [uid, gid, gids, runtime_flags, rlimits,\n    permitted_capabilities, effective_capabilities])\nserver_samsung_q = ForkServer('samsung_q', [uid, gid, gids, runtime_flags, Anon(jint), Anon(jint), rlimits,\n    permitted_capabilities, effective_capabilities])\nhook_map = {}\ndef gen_jni_def(clz, methods):\n    if clz not in hook_map:\n        hook_map[clz] = []",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "server_l",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "server_l = ForkServer('l', [uid, gid, gids, runtime_flags, rlimits,\n    permitted_capabilities, effective_capabilities])\nserver_samsung_q = ForkServer('samsung_q', [uid, gid, gids, runtime_flags, Anon(jint), Anon(jint), rlimits,\n    permitted_capabilities, effective_capabilities])\nhook_map = {}\ndef gen_jni_def(clz, methods):\n    if clz not in hook_map:\n        hook_map[clz] = []\n    decl = ''\n    for m in methods:",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "server_samsung_q",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "server_samsung_q = ForkServer('samsung_q', [uid, gid, gids, runtime_flags, Anon(jint), Anon(jint), rlimits,\n    permitted_capabilities, effective_capabilities])\nhook_map = {}\ndef gen_jni_def(clz, methods):\n    if clz not in hook_map:\n        hook_map[clz] = []\n    decl = ''\n    for m in methods:\n        decl += ind(0) + f'[[clang::no_stack_protector]] {m.ret.type.cpp} {m.name}(JNIEnv *env, jclass clazz, {m.cpp()}) {{'\n        decl += m.body()",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "hook_map",
+        "kind": 5,
+        "importPath": "native.src.zygisk.gen_jni_hooks",
+        "description": "native.src.zygisk.gen_jni_hooks",
+        "peekOfCode": "hook_map = {}\ndef gen_jni_def(clz, methods):\n    if clz not in hook_map:\n        hook_map[clz] = []\n    decl = ''\n    for m in methods:\n        decl += ind(0) + f'[[clang::no_stack_protector]] {m.ret.type.cpp} {m.name}(JNIEnv *env, jclass clazz, {m.cpp()}) {{'\n        decl += m.body()\n        if m.ret.value:\n            decl += ind(1) + f'return {m.ret.value};'",
+        "detail": "native.src.zygisk.gen_jni_hooks",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def error(str):\n    if no_color:\n        print(f'\\n! {str}\\n')\n    else:\n        print(f'\\n\\033[41;30m{str}\\033[0m\\n')\n    sys.exit(1)\ndef header(str):\n    if no_color:\n        print(f'\\n{str}\\n')\n    else:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "header",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def header(str):\n    if no_color:\n        print(f'\\n{str}\\n')\n    else:\n        print(f'\\n\\033[44;30m{str}\\033[0m\\n')\ndef vprint(str):\n    if args.verbose:\n        print(str)\nis_windows = os.name == 'nt'\nEXE_EXT = '.exe' if is_windows else ''",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "vprint",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def vprint(str):\n    if args.verbose:\n        print(str)\nis_windows = os.name == 'nt'\nEXE_EXT = '.exe' if is_windows else ''\nno_color = False\nif is_windows:\n    try:\n        import colorama\n        colorama.init()",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "mv",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')\n    except:\n        pass\ndef cp(source, target):\n    try:\n        shutil.copyfile(source, target)\n        vprint(f'cp {source} -> {target}')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "cp",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def cp(source, target):\n    try:\n        shutil.copyfile(source, target)\n        vprint(f'cp {source} -> {target}')\n    except:\n        pass\ndef rm(file):\n    try:\n        os.remove(file)\n        vprint(f'rm {file}')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "rm",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def rm(file):\n    try:\n        os.remove(file)\n        vprint(f'rm {file}')\n    except OSError as e:\n        if e.errno != errno.ENOENT:\n            raise\ndef rm_on_error(func, path, _):\n    # Remove a read-only file on Windows will get \"WindowsError: [Error 5] Access is denied\"\n    # Clear the \"read-only\" and retry",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "rm_on_error",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def rm_on_error(func, path, _):\n    # Remove a read-only file on Windows will get \"WindowsError: [Error 5] Access is denied\"\n    # Clear the \"read-only\" and retry\n    os.chmod(path, stat.S_IWRITE)\n    os.unlink(path)\ndef rm_rf(path):\n    vprint(f'rm -rf {path}')\n    shutil.rmtree(path, ignore_errors=True, onerror=rm_on_error)\ndef mkdir(path, mode=0o755):\n    try:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "rm_rf",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def rm_rf(path):\n    vprint(f'rm -rf {path}')\n    shutil.rmtree(path, ignore_errors=True, onerror=rm_on_error)\ndef mkdir(path, mode=0o755):\n    try:\n        os.mkdir(path, mode)\n    except:\n        pass\ndef mkdir_p(path, mode=0o755):\n    os.makedirs(path, mode, exist_ok=True)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "mkdir",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def mkdir(path, mode=0o755):\n    try:\n        os.mkdir(path, mode)\n    except:\n        pass\ndef mkdir_p(path, mode=0o755):\n    os.makedirs(path, mode, exist_ok=True)\ndef execv(cmd, env=None):\n    return subprocess.run(cmd, stdout=STDOUT, env=env)\ndef system(cmd):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "mkdir_p",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def mkdir_p(path, mode=0o755):\n    os.makedirs(path, mode, exist_ok=True)\ndef execv(cmd, env=None):\n    return subprocess.run(cmd, stdout=STDOUT, env=env)\ndef system(cmd):\n    return subprocess.run(cmd, shell=True, stdout=STDOUT)\ndef cmd_out(cmd, env=None):\n    return subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=env) \\\n                     .stdout.strip().decode('utf-8')\ndef xz(data):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "execv",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def execv(cmd, env=None):\n    return subprocess.run(cmd, stdout=STDOUT, env=env)\ndef system(cmd):\n    return subprocess.run(cmd, shell=True, stdout=STDOUT)\ndef cmd_out(cmd, env=None):\n    return subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=env) \\\n                     .stdout.strip().decode('utf-8')\ndef xz(data):\n    return lzma.compress(data, preset=9, check=lzma.CHECK_NONE)\ndef parse_props(file):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def system(cmd):\n    return subprocess.run(cmd, shell=True, stdout=STDOUT)\ndef cmd_out(cmd, env=None):\n    return subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=env) \\\n                     .stdout.strip().decode('utf-8')\ndef xz(data):\n    return lzma.compress(data, preset=9, check=lzma.CHECK_NONE)\ndef parse_props(file):\n    props = {}\n    with open(file, 'r') as f:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_out",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def cmd_out(cmd, env=None):\n    return subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=env) \\\n                     .stdout.strip().decode('utf-8')\ndef xz(data):\n    return lzma.compress(data, preset=9, check=lzma.CHECK_NONE)\ndef parse_props(file):\n    props = {}\n    with open(file, 'r') as f:\n        for line in [l.strip(' \\t\\r\\n') for l in f]:\n            if line.startswith('#') or len(line) == 0:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "xz",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def xz(data):\n    return lzma.compress(data, preset=9, check=lzma.CHECK_NONE)\ndef parse_props(file):\n    props = {}\n    with open(file, 'r') as f:\n        for line in [l.strip(' \\t\\r\\n') for l in f]:\n            if line.startswith('#') or len(line) == 0:\n                continue\n            prop = line.split('=')\n            if len(prop) != 2:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "parse_props",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def parse_props(file):\n    props = {}\n    with open(file, 'r') as f:\n        for line in [l.strip(' \\t\\r\\n') for l in f]:\n            if line.startswith('#') or len(line) == 0:\n                continue\n            prop = line.split('=')\n            if len(prop) != 2:\n                continue\n            value = prop[1].strip(' \\t\\r\\n')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def load_config(args):\n    commit_hash = cmd_out(['git', 'rev-parse', '--short=8', 'HEAD'])\n    # Default values\n    config['version'] = commit_hash\n    config['outdir'] = 'out'\n    # Load prop files\n    if op.exists(args.config):\n        config.update(parse_props(args.config))\n    for key, value in parse_props('gradle.properties').items():\n        if key.startswith('magisk.'):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "clean_elf",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def clean_elf():\n    if is_windows:\n        elf_cleaner = op.join('tools', 'elf-cleaner.exe')\n    else:\n        elf_cleaner = op.join('native', 'out', 'elf-cleaner')\n        if not op.exists(elf_cleaner):\n            execv(['gcc', '-DPACKAGE_NAME=\"termux-elf-cleaner\"',\n                   '-DPACKAGE_VERSION=\"2.1.1\"', '-DCOPYRIGHT=\"Copyright (C) 2022 Termux.\"',\n                   'tools/termux-elf-cleaner/elf-cleaner.cpp',\n                   'tools/termux-elf-cleaner/arghandling.c',",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "run_ndk_build",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def run_ndk_build(flags):\n    os.chdir('native')\n    flags = 'NDK_PROJECT_PATH=. NDK_APPLICATION_MK=src/Application.mk ' + flags\n    proc = system(f'{ndk_build} {flags} -j{cpu_count}')\n    if proc.returncode != 0:\n        error('Build binary failed!')\n    os.chdir('..')\n    for arch in archs:\n        for tgt in support_targets + ['libinit-ld.so', 'libzygisk-ld.so']:\n            source = op.join('native', 'libs', arch, tgt)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "run_cargo_build",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def run_cargo_build(args):\n    os.chdir(op.join('native', 'src'))\n    targets = set(args.target) & set(rust_targets)\n    if 'resetprop' in args.target:\n        targets.add('magisk')\n    env = os.environ.copy()\n    env['CARGO_BUILD_RUSTC'] = op.join(rust_bin, 'rustc' + EXE_EXT)\n    # Install cxxbridge and generate C++ bindings\n    native_out = op.join('..', 'out')\n    local_cargo_root = op.join(native_out, '.cargo')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "write_if_diff",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def write_if_diff(file_name, text):\n    do_write = True\n    if op.exists(file_name):\n        with open(file_name, 'r') as f:\n            orig = f.read()\n        do_write = orig != text\n    if do_write:\n        with open(file_name, 'w') as f:\n            f.write(text)\ndef binary_dump(src, var_name, compressor=xz):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "binary_dump",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def binary_dump(src, var_name, compressor=xz):\n    out_str = f'constexpr unsigned char {var_name}[] = {{'\n    for i, c in enumerate(compressor(src.read())):\n        if i % 16 == 0:\n            out_str += '\\n'\n        out_str += f'0x{c:02X},'\n    out_str += '\\n};\\n'\n    return out_str\ndef dump_bin_header(args):\n    mkdir_p(native_gen_path)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "dump_bin_header",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def dump_bin_header(args):\n    mkdir_p(native_gen_path)\n    for arch in archs:\n        preload = op.join('native', 'out', arch, 'libinit-ld.so')\n        with open(preload, 'rb') as src:\n            text = binary_dump(src, 'init_ld_xz')\n        preload = op.join('native', 'out', arch, 'libzygisk-ld.so')\n        with open(preload, 'rb') as src:\n            text += binary_dump(src, 'zygisk_ld', compressor=lambda x: x)\n        write_if_diff(op.join(native_gen_path, f'{arch}_binaries.h'), text)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "dump_flag_header",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def dump_flag_header():\n    flag_txt = textwrap.dedent('''\\\n        #pragma once\n        #define quote(s)            #s\n        #define str(s)              quote(s)\n        #define MAGISK_FULL_VER     MAGISK_VERSION \"(\" str(MAGISK_VER_CODE) \")\"\n        #define NAME_WITH_VER(name) str(name) \" \" MAGISK_FULL_VER\n        ''')\n    flag_txt += f'#define MAGISK_VERSION      \"{config[\"version\"]}\"\\n'\n    flag_txt += f'#define MAGISK_VER_CODE     {config[\"versionCode\"]}\\n'",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_binary",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def build_binary(args):\n    # Verify NDK install\n    try:\n        with open(op.join(ndk_path, 'ONDK_VERSION'), 'r') as ondk_ver:\n            assert ondk_ver.read().strip(' \\t\\r\\n') == config['ondkVersion']\n    except:\n        error('Unmatched NDK. Please install/upgrade NDK with \"build.py ndk\"')\n    if 'target' not in vars(args):\n        vars(args)['target'] = []\n    if args.target:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_apk",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def build_apk(args, module):\n    build_type = 'Release' if args.release else 'Debug'\n    proc = execv([gradlew, f'{module}:assemble{build_type}',\n                  '-PconfigPath=' + op.abspath(args.config)])\n    if proc.returncode != 0:\n        error(f'Build {module} failed!')\n    build_type = build_type.lower()\n    apk = f'{module}-{build_type}.apk'\n    source = op.join(module, 'build', 'outputs', 'apk', build_type, apk)\n    target = op.join(config['outdir'], apk)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_app",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def build_app(args):\n    header('* Building the Magisk app')\n    build_apk(args, 'app')\n    # Stub building is directly integrated into the main app\n    # build process. Copy the stub APK into output directory.\n    build_type = 'release' if args.release else 'debug'\n    apk = f'stub-{build_type}.apk'\n    source = op.join('app', 'src', build_type, 'assets', 'stub.apk')\n    target = op.join(config['outdir'], apk)\n    cp(source, target)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_stub",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def build_stub(args):\n    header('* Building the stub app')\n    build_apk(args, 'stub')\ndef cleanup(args):\n    support_targets = {'native', 'java'}\n    if args.target:\n        args.target = set(args.target) & support_targets\n    else:\n        args.target = support_targets\n    if 'native' in args.target:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "cleanup",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def cleanup(args):\n    support_targets = {'native', 'java'}\n    if args.target:\n        args.target = set(args.target) & support_targets\n    else:\n        args.target = support_targets\n    if 'native' in args.target:\n        header('* Cleaning native')\n        rm_rf(op.join('native', 'libs'))\n        rm_rf(op.join('native', 'obj'))",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "setup_ndk",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def setup_ndk(args):\n    os_name = platform.system().lower()\n    ndk_ver = config['ondkVersion']\n    url = f'https://github.com/topjohnwu/ondk/releases/download/{ndk_ver}/ondk-{ndk_ver}-{os_name}.tar.gz'\n    ndk_archive = url.split('/')[-1]\n    header(f'* Downloading and extracting {ndk_archive}')\n    with urllib.request.urlopen(url) as response:\n        with tarfile.open(mode='r|gz', fileobj=response) as tar:\n            tar.extractall(ndk_root)\n    rm_rf(ndk_path)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "setup_avd",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def setup_avd(args):\n    if not args.skip:\n        build_all(args)\n    header('* Setting up emulator')\n    abi = cmd_out([adb_path, 'shell', 'getprop', 'ro.product.cpu.abi'])\n    proc = execv([adb_path, 'push', f'native/out/{abi}/busybox', 'scripts/avd_magisk.sh', '/data/local/tmp'])\n    if proc.returncode != 0:\n        error('adb push failed!')\n    apk = 'out/app-release.apk' if args.release else 'out/app-debug.apk'\n    proc = execv([adb_path, 'push', apk, '/data/local/tmp/magisk.apk'])",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "patch_avd_ramdisk",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def patch_avd_ramdisk(args):\n    if not args.skip:\n        args.release = False\n        build_all(args)\n    header('* Patching emulator ramdisk.img')\n    # Create a backup to prevent accidental overwrites\n    backup = args.ramdisk + '.bak'\n    if not op.exists(backup):\n        cp(args.ramdisk, backup)\n    ini = op.join(op.dirname(args.ramdisk), 'advancedFeatures.ini')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_all",
+        "kind": 2,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "def build_all(args):\n    build_binary(args)\n    build_app(args)\nparser = argparse.ArgumentParser(description='Magisk build script')\nparser.set_defaults(func=lambda x: None)\nparser.add_argument('-r', '--release', action='store_true',\n                    help='compile in release mode')\nparser.add_argument('-v', '--verbose', action='store_true',\n                    help='verbose output')\nparser.add_argument('-c', '--config', default='config.prop',",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "is_windows",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "is_windows = os.name == 'nt'\nEXE_EXT = '.exe' if is_windows else ''\nno_color = False\nif is_windows:\n    try:\n        import colorama\n        colorama.init()\n    except ImportError:\n        # We can't do ANSI color codes in terminal on Windows without colorama\n        no_color = True",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "EXE_EXT",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "EXE_EXT = '.exe' if is_windows else ''\nno_color = False\nif is_windows:\n    try:\n        import colorama\n        colorama.init()\n    except ImportError:\n        # We can't do ANSI color codes in terminal on Windows without colorama\n        no_color = True\n# Environment checks",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "no_color",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "no_color = False\nif is_windows:\n    try:\n        import colorama\n        colorama.init()\n    except ImportError:\n        # We can't do ANSI color codes in terminal on Windows without colorama\n        no_color = True\n# Environment checks\nif not sys.version_info >= (3, 8):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "cpu_count",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "cpu_count = multiprocessing.cpu_count()\narchs = ['armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64']\ntriples = ['armv7a-linux-androideabi', 'i686-linux-android', 'aarch64-linux-android', 'x86_64-linux-android']\ndefault_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy', 'busybox']\nsupport_targets = default_targets + ['resetprop']\nrust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "archs",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "archs = ['armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64']\ntriples = ['armv7a-linux-androideabi', 'i686-linux-android', 'aarch64-linux-android', 'x86_64-linux-android']\ndefault_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy', 'busybox']\nsupport_targets = default_targets + ['resetprop']\nrust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "triples",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "triples = ['armv7a-linux-androideabi', 'i686-linux-android', 'aarch64-linux-android', 'x86_64-linux-android']\ndefault_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy', 'busybox']\nsupport_targets = default_targets + ['resetprop']\nrust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "default_targets",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "default_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy', 'busybox']\nsupport_targets = default_targets + ['resetprop']\nrust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "support_targets",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "support_targets = default_targets + ['resetprop']\nrust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "rust_targets",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "rust_targets = ['magisk', 'magiskinit', 'magiskboot', 'magiskpolicy']\nsdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "sdk_path",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "sdk_path = os.environ['ANDROID_SDK_ROOT']\nndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "ndk_root",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "ndk_root = op.join(sdk_path, 'ndk')\nndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "ndk_path",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "ndk_path = op.join(ndk_root, 'magisk')\nndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "ndk_build",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "ndk_build = op.join(ndk_path, 'ndk-build')\nrust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "rust_bin",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "rust_bin = op.join(ndk_path, 'toolchains', 'rust', 'bin')\ncargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "cargo",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "cargo = op.join(rust_bin, 'cargo' + EXE_EXT)\ngradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "gradlew",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "gradlew = op.join('.', 'gradlew' + ('.bat' if is_windows else ''))\nadb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "adb_path",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "adb_path = op.join(sdk_path, 'platform-tools', 'adb' + EXE_EXT)\nnative_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "native_gen_path",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "native_gen_path = op.realpath(op.join('native', 'out', 'generated'))\n# Global vars\nconfig = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')\n    except:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "config = {}\nSTDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')\n    except:\n        pass\ndef cp(source, target):",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "STDOUT",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "STDOUT = None\nbuild_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')\n    except:\n        pass\ndef cp(source, target):\n    try:",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "build_tools",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "build_tools = None\ndef mv(source, target):\n    try:\n        shutil.move(source, target)\n        vprint(f'mv {source} -> {target}')\n    except:\n        pass\ndef cp(source, target):\n    try:\n        shutil.copyfile(source, target)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "parser = argparse.ArgumentParser(description='Magisk build script')\nparser.set_defaults(func=lambda x: None)\nparser.add_argument('-r', '--release', action='store_true',\n                    help='compile in release mode')\nparser.add_argument('-v', '--verbose', action='store_true',\n                    help='verbose output')\nparser.add_argument('-c', '--config', default='config.prop',\n                    help='custom config file (default: config.prop)')\nsubparsers = parser.add_subparsers(title='actions')\nall_parser = subparsers.add_parser(",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "subparsers",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "subparsers = parser.add_subparsers(title='actions')\nall_parser = subparsers.add_parser(\n    'all', help='build everything')\nall_parser.set_defaults(func=build_all)\nbinary_parser = subparsers.add_parser('binary', help='build binaries')\nbinary_parser.add_argument(\n    'target', nargs='*', help=f\"{', '.join(support_targets)}, \\\n    or empty for defaults ({', '.join(default_targets)})\")\nbinary_parser.set_defaults(func=build_binary)\napp_parser = subparsers.add_parser('app', help='build the Magisk app')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "all_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "all_parser = subparsers.add_parser(\n    'all', help='build everything')\nall_parser.set_defaults(func=build_all)\nbinary_parser = subparsers.add_parser('binary', help='build binaries')\nbinary_parser.add_argument(\n    'target', nargs='*', help=f\"{', '.join(support_targets)}, \\\n    or empty for defaults ({', '.join(default_targets)})\")\nbinary_parser.set_defaults(func=build_binary)\napp_parser = subparsers.add_parser('app', help='build the Magisk app')\napp_parser.set_defaults(func=build_app)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "binary_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "binary_parser = subparsers.add_parser('binary', help='build binaries')\nbinary_parser.add_argument(\n    'target', nargs='*', help=f\"{', '.join(support_targets)}, \\\n    or empty for defaults ({', '.join(default_targets)})\")\nbinary_parser.set_defaults(func=build_binary)\napp_parser = subparsers.add_parser('app', help='build the Magisk app')\napp_parser.set_defaults(func=build_app)\nstub_parser = subparsers.add_parser('stub', help='build the stub app')\nstub_parser.set_defaults(func=build_stub)\navd_parser = subparsers.add_parser(",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "app_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "app_parser = subparsers.add_parser('app', help='build the Magisk app')\napp_parser.set_defaults(func=build_app)\nstub_parser = subparsers.add_parser('stub', help='build the stub app')\nstub_parser.set_defaults(func=build_stub)\navd_parser = subparsers.add_parser(\n    'emulator', help='setup AVD for development')\navd_parser.add_argument('-s', '--skip', action='store_true',\n    help='skip building binaries and the app')\navd_parser.set_defaults(func=setup_avd)\navd_patch_parser = subparsers.add_parser(",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "stub_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "stub_parser = subparsers.add_parser('stub', help='build the stub app')\nstub_parser.set_defaults(func=build_stub)\navd_parser = subparsers.add_parser(\n    'emulator', help='setup AVD for development')\navd_parser.add_argument('-s', '--skip', action='store_true',\n    help='skip building binaries and the app')\navd_parser.set_defaults(func=setup_avd)\navd_patch_parser = subparsers.add_parser(\n    'avd_patch', help='patch AVD ramdisk.img')\navd_patch_parser.add_argument('ramdisk', help='path to ramdisk.img')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "avd_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "avd_parser = subparsers.add_parser(\n    'emulator', help='setup AVD for development')\navd_parser.add_argument('-s', '--skip', action='store_true',\n    help='skip building binaries and the app')\navd_parser.set_defaults(func=setup_avd)\navd_patch_parser = subparsers.add_parser(\n    'avd_patch', help='patch AVD ramdisk.img')\navd_patch_parser.add_argument('ramdisk', help='path to ramdisk.img')\navd_patch_parser.add_argument('-s', '--skip', action='store_true',\n    help='skip building binaries and the app')",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "avd_patch_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "avd_patch_parser = subparsers.add_parser(\n    'avd_patch', help='patch AVD ramdisk.img')\navd_patch_parser.add_argument('ramdisk', help='path to ramdisk.img')\navd_patch_parser.add_argument('-s', '--skip', action='store_true',\n    help='skip building binaries and the app')\navd_patch_parser.set_defaults(func=patch_avd_ramdisk)\nclean_parser = subparsers.add_parser('clean', help='cleanup')\nclean_parser.add_argument(\n    'target', nargs='*', help='native, java, or empty to clean both')\nclean_parser.set_defaults(func=cleanup)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "clean_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "clean_parser = subparsers.add_parser('clean', help='cleanup')\nclean_parser.add_argument(\n    'target', nargs='*', help='native, java, or empty to clean both')\nclean_parser.set_defaults(func=cleanup)\nndk_parser = subparsers.add_parser('ndk', help='setup Magisk NDK')\nndk_parser.set_defaults(func=setup_ndk)\nif len(sys.argv) == 1:\n    parser.print_help()\n    sys.exit(1)\nargs = parser.parse_args()",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "ndk_parser",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "ndk_parser = subparsers.add_parser('ndk', help='setup Magisk NDK')\nndk_parser.set_defaults(func=setup_ndk)\nif len(sys.argv) == 1:\n    parser.print_help()\n    sys.exit(1)\nargs = parser.parse_args()\nload_config(args)\n# Call corresponding functions\nargs.func(args)",
+        "detail": "build",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "build",
+        "description": "build",
+        "peekOfCode": "args = parser.parse_args()\nload_config(args)\n# Call corresponding functions\nargs.func(args)",
+        "detail": "build",
+        "documentation": {}
+    }
+]
